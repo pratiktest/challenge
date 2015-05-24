@@ -21,6 +21,8 @@ Challenge
 * Now we have to just print the array sequentially. However the function must return the list so we need to concat the lists
 * If we traverse through the array of size s and concat the list using java concat then it will take O(s*w) where w is the no of words. Since Linked List concat java provides is not O(1). (It will call java toArray to create the spaces and return concat list..so its actually a O(n) operation.) This is fine for generic list implementation, however since we know that we have LinkedList we can just point a lists tail to other list head and do this in O(1) time.
 * So instead of calling java concat we create a custom list implementation and go on collecting the word list in constant time. So the time to print in worse case is O(maxValue) and we know O(maxValue) < O(n)
-* So total time = O(n)[parse words create map] + O(maxValue)[allocate reverse map size] + O(p)[build reverse array] + O(maxValue)[print list] = O(n).
+* However we have to trim this list till the number of items we want which will take another O(p).
+* since all these operations occur one after another linear time is maintained
+* So total time = O(n)[parse words create map] + O(maxValue)[allocate reverse map size] + O(p)[build reverse array] + O(maxValue)[collectlist] + O(p)[print list only till size s , s< no of words] = O(n).
 * Note this is not what we implement in production. This App is pointer intensive and is not space effecient. Since we have not space constraint and only time constraint we have this solution specific for challenge. ideally we would just sort the map(maybe use a tree map) and give the output.
 
