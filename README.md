@@ -6,7 +6,7 @@ Challenge
 **below is the flow of code**
 
 * read the character array one by one 
-* assumption is words are seperated by one or moe spaces
+* assumption is words are seperated by one or more spaces
 * as we read the words create a hashmap with word and count. since we only hold unique keys get(key) in hashmap is O(1). If key is duplicate ofcourse we increment the count and update hashmap
 * if value is present in hash map increment the value by 1.
 * Finally we will have a hashmap with unique words and their frequency
